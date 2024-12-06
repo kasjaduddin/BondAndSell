@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning;
 
 namespace Seville
 {
     public class SetTurnType : MonoBehaviour
     {
-        public ActionBasedSnapTurnProvider snapTurnProvider;
-        public ActionBasedContinuousTurnProvider continuousTurnProvider;
+        public SnapTurnProvider snapTurnProvider;
+        public ContinuousTurnProvider continuousTurnProvider;
 
         public void SetTypeFormIndex(int index)
         {
