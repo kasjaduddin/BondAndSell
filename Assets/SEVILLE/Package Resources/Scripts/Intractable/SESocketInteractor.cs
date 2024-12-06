@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Seville
 {
-    public class SESocketInteractor : XRSocketInteractor
+    public class SESocketInteractor : UnityEngine.XR.Interaction.Toolkit.Interactors.XRSocketInteractor
     {
         [Space(5f)]
         [Header("Seville Settings")]
@@ -58,7 +58,7 @@ namespace Seville
 
         private void OnObjectSelectEntered(SelectEnterEventArgs args)
         {
-            XRBaseInteractable interactableObject = args.interactableObject as XRBaseInteractable;
+            UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactableObject = args.interactableObject as UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable;
 
             // Debug.Log($"the {interactableObject.gameObject.name} is entered");
 
@@ -75,7 +75,7 @@ namespace Seville
 
         private void OnObjectSelectExit(SelectExitEventArgs args)
         {
-            XRBaseInteractable interactableObject = args.interactableObject as XRBaseInteractable;
+            UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactableObject = args.interactableObject as UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable;
 
             // Debug.Log($"the {interactableObject.gameObject.name} is entered");
 
@@ -107,17 +107,17 @@ namespace Seville
             ToggleImageHover(false);
         }
 
-        public override bool CanSelect(IXRSelectInteractable interactable)
+        public override bool CanSelect(UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable interactable)
         {
-            return base.CanSelect(interactable) && MatchUsingTag(interactable as XRBaseInteractable);
+            return base.CanSelect(interactable) && MatchUsingTag(interactable as UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable);
         }
 
-        public override bool CanHover(IXRHoverInteractable interactable)
+        public override bool CanHover(UnityEngine.XR.Interaction.Toolkit.Interactables.IXRHoverInteractable interactable)
         {
-            return base.CanHover(interactable) && MatchUsingTag(interactable as XRBaseInteractable);
+            return base.CanHover(interactable) && MatchUsingTag(interactable as UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable);
         }
 
-        private bool MatchUsingTag(XRBaseInteractable interactable)
+        private bool MatchUsingTag(UnityEngine.XR.Interaction.Toolkit.Interactables.XRBaseInteractable interactable)
         {
             var obj = interactable.GetComponent<XRGrabInteractableTwoAttach>();
 
