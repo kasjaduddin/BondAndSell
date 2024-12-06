@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "com.seville.package": {
+      "version": "https://github.com/smarteyedev/Seville-Plugin.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.xr.interaction.toolkit": "2.4.3",
+        "com.unity.xr.management": "4.0.1",
+        "com.unity.textmeshpro": "3.0.6"
+      },
+      "hash": "4b8221d53c58cd3b83b965e048d1fb589295abb1"
+    },
     "com.unity.burst": {
       "version": "1.8.18",
       "depth": 1,
