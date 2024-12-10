@@ -2,6 +2,8 @@ using UnityEngine.Events;
 using UnityEngine;
 using TMPro;
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
+using System.Threading.Tasks;
+using System;
 
 namespace Seville
 {
@@ -10,9 +12,10 @@ namespace Seville
 
     public class KeyboardController : MonoBehaviour
     {
+        
         public NonNativeKeyboard keyboard;
         public TMP_InputField inputField;
-
+        public GameObject inputNameUI;
         public float distance = 0.5f;
         public float verticalOffset = -0.5f;
 
@@ -69,14 +72,25 @@ namespace Seville
             inputField.caretColor = caretColor;
         }
 
-        public void OnClickSubmit()
+        public async void OnClickSubmit()
         {
             string msg = inputField.text.ToString();
 
             // Debug.Log($"player submit text: '{msg}'");
-
+            await SaveName(msg);
+            await NonactiveUI();
             if (OnGetKeyboardOuput != null)
                 OnGetKeyboardOuput.Invoke(msg);
+        }
+
+        private async Task SaveName(string name)
+        {
+            PlayerPrefs.SetString("name", name);   
+        }
+
+        private async Task NonactiveUI()
+        {
+            inputNameUI.SetActive(false);
         }
     }
 }
