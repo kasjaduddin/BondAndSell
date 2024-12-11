@@ -7008,7 +7008,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &832575518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9033,6 +9033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaObjsList:
   - {fileID: 1984014323}
+  NPC: {fileID: 832575517}
   areaTexture: {fileID: 2800000, guid: ed5290d8df18488780e2996b9b882f01, type: 3}
   isRestartOnExitArea: 0
   firstCamLookRotationValue: 0
